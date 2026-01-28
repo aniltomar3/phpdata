@@ -1,0 +1,88 @@
+<html>
+<head>
+	<title>JS Class</title>
+</head>
+<body>
+
+</body>
+<button id="orange">Orange</button>
+<button id="green">Green</button>
+<button id="blue">blue</button>
+<button id="yellow">yellow</button>
+
+<script>
+
+
+// closure  lexical scoping
+
+// Closure- A closure is an inner function that has access to the outer function variables and global variables.
+
+
+function clickHandler(color){
+   return function(){ document.body.style.backgroundColor= `${color}`; }
+}
+
+
+let arr=['orange','green','blue','yellow'];
+
+for(let i of arr){ document.getElementById(i).onclick=  clickHandler(i); }
+
+
+// document.getElementById('orange').onclick=   clickHandler('orange');
+// document.getElementById('green').onclick=   clickHandler('green');
+// document.getElementById('blue').onclick=  clickHandler('blue');
+// document.getElementById('yellow').onclick=   clickHandler('yellow');
+
+
+
+
+
+
+// function outer(){
+//    var a= "I am outer function varibale";
+// 	return function inner(){
+//        document.write(a+"<br/>");
+// 	}
+// }
+
+// outer()();
+
+// function a(){
+// 	 //console.log('hello');
+// 	 return function b(){ console.log('hello'); }
+    
+// }
+
+// a()();
+// Pass function as an argument
+
+// const greet= function(){ return "hello"; }	
+
+// const greeting= function(t,name){
+
+//    console.log(t() + " "+name);
+// }
+
+// greeting(greet,'demoname');
+
+
+
+
+// function xx(){ console.log('first hello'); }
+// xx();  // old method
+
+// var x= function(){ console.log('hello'); }
+// x();
+
+// In JS we can assign function to a variable
+// var y= ()=>{ console.log('last hello'); }
+// y();   // calling through fat arrow function
+
+
+
+
+
+
+</script>
+
+</html>

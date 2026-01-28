@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+   <style>
+   *{padding:0;margin:0;box-sizing:border-box; font-family:'Poppins',sans-serif;}
+   body{background:#222;}
+   .card{max-width:500px; background: linear-gradient(135deg,#5ea2b4,#5b548a); border-radius:20px; margin:100px auto; text-align:center; padding:20px}
+   .search {width: 100%;display: flex; align-items: center;justify-content: space-between; height:120px;}
+   .search input{border:0;outline:0;padding:10px 25px;border-radius:30px;flex:1;margin-right:15px;font-size:18px;}
+   .search button{ border:0;outline:0;background:#ebfffc;width:40px;height:40px;cursor:pointer;border-radius:40px }
+   .search button img{width:13px;}
+   .weather{ color:#fff; } .weather h1{font-weight:500; font-size:70px;} .weather h2{ font-weight:400; font-size:35px; }
+   .details{ display:flex;align-items:center;justify-content:space-between;padding:0 20px;margin-top:50px; }
+   .col{display: flex;align-items: center;text-align: left;}
+   .col img{width:30px; margin-right:10px;}
+   </style>		
+</head>
+<body>
+<div class="card">
+  <div class="search">
+       <input type="search" name="" placeholder="enter city name">
+       <button><img src="images/search.png" /></button>
+  </div>
+  <div class="weather">
+     <img src="images/rain.png" class="weather-icon">
+     <h1 class="temp">22°C</h1>
+     <h2 class="city">New York</h2>
+  </div>
+  <div class="details">
+      <div class="col">
+        <img src="images/humidity.png" />
+        <p class="humidity">50%</p>
+        <p>Humidity</p>
+      </div>
+      <div class="col">
+        <img src="images/wind.png" />
+        <p class="wind">15km/h</p>
+        <p>Wind Speed</p>
+      </div>	
+  </div>	
+</div>	
+<script>
+ const apiKey="a002c368ce4e26bc41fc53e41f34fe49";
+ const apiUrl="https://api.openweathermap.org/data/2.5/weather?q=London";
+ async function checkWeather(){
+ 	const response= await fetch(apiUrl + `&appid=${apiKey}`);
+ 	var data= await response.json();
+ 	console.log(data);
+ }
+
+
+ checkWeather()
+</script>	
+</body>
+</html>

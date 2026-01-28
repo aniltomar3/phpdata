@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS String Practise</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>	
+<body>
+<h1>Home Page</h1>
+
+<form id="myform" method="POST">
+  <input type="file" name="inpFile" id="inpFile" value="" />
+ <input type="submit" name="submit" value="submit" /> 
+</form>	
+
+
+<script>
+var myForm= document.getElementById('myform');
+var inpFile= document.getElementById('inpFile');
+
+
+myForm.addEventListener("submit",(e)=>{
+  //console.log(inpFile.files[0]);
+   const formData= new FormData();  // 
+   formData.append("inpFile",inpFile.files[0]);
+   $.ajax({
+      type:"POST",
+      url: "http://localhost/php/js/upload.php",
+      contentType:false,   // 
+      processData:false,  // send data without encoding in query string  
+      data: formData,
+      success:function(res){ console.log(res); },error:function(err){ console.log('error occured'); }
+   })
+
+ e.preventDefault();
+});
+</script>
+</body>
+</html>	
+
+<!-- 
+$upload= "images/".$_FILES['inpFile']['name'];
+
+ if( move_uploaded_file($_FILES['inpFile']['tmp_name'], $upload) ){
+ 	echo "File uploaded successfully";
+ }else{ echo "Error Occured";} -->

@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>
+background tutorial
+</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	*{
+		padding: 0; margin: 0;font-family: sans-serif; box-sizing:border-box;list-style: none;text-decoration: none;
+	}
+	html,body{
+		overflow-x:hidden;
+	}
+.header{
+	padding:0 4.8rem;
+	height:100px;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color:#e7f5ff;
+
+}
+.navbar-list{display: flex; gap:20px;}
+.header .logo{height:50px; width:70px;}
+.navbar-link:link,.navbar-link:visited{ display:inline-block;text-transform: uppercase; font-size:14px;}
+.mobile-navbar-btn{display:none; background:transparent;cursor:pointer; }
+.mobile-navbar-btn i.fa-close{ display:none; }
+
+.sec1{
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height:60vh;
+}
+.services{ background-color:#ccc; }
+
+
+@media only screen and (max-width:768px){
+	
+   
+  .mobile-navbar-btn{ display: block;z-index:999; border:3px solid #ccc; }
+  .mobile-navbar-btn{ display:block; }
+  .header{position: relative;}
+  .navbar{
+  	width:100%;
+  	height:100vh;
+  	background:#e7f5ff;
+  	position: absolute;
+  	top:0;
+  	left:0;
+  	border:1px solid #ccc;
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	transform: translateX(100%);
+  	transition:all 0.5s linear;
+  	opacity:0;
+  	visibility: hidden;
+  }
+  .navbar-list{
+  	flex-direction: column;
+  	align-items: center;
+  }
+
+  .active .navbar{
+  	transform: translateX(0);
+  	opacity: 1;
+  	visibility: visible;
+  }
+
+ .active .mobile-navbar-btn i.fa-close{ display:block; }
+ .active .mobile-navbar-btn i.fa-bars{ display:none; }
+
+}
+</style>	
+
+</head>
+
+<body>
+	<header class="header ">
+    <img src="./images/demo.jpg" alt="logo" class="logo" />
+    <nav class="navbar">
+      <ul class="navbar-list">
+   	 <li><a href="#" class="navbar-link">Home</a></li>
+   	 <li><a href="#" class="navbar-link">About</a></li>
+     <li><a href="#" class="navbar-link">Blog</a></li>
+   	 <li><a href="#" class="navbar-link">Contact</a></li>
+   	</ul>
+    </nav>	
+    
+    <div class="mobile-navbar-btn">
+      <i class="fa fa-bars" style="color:red" ></i>
+       <i class="fa fa-close" style="color:blue"></i>
+    </div>
+   </header>		
+
+    <main>
+    	<section class="services">
+        <div class="sec1">
+        	<p>Lorem ipsum content. </p>
+        </div>
+    	</section>	
+    </main>
+</body>
+</html>
+<script>
+
+const mobile_nav= document.querySelector(".mobile-navbar-btn");
+const nav_header= document.querySelector(".header"); 
+ const toggleNavbar = () =>{ 
+   nav_header.classList.toggle('active');
+ }
+mobile_nav.addEventListener("click", ()=> toggleNavbar());
+</script>	

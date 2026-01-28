@@ -1,0 +1,30 @@
+<?php 
+include('php-mail/PHPMailerAutoload.php');
+$mail = new PHPMailer(); 
+$mail->isSMTP();
+
+$mail->host='smtp.gmail.com';
+$mail->port=587;
+$mail->SMTPAuth=true;
+$mail->SMTPSecure='tls';
+
+$mail->Username='anilvirtual2020@gmail.com';
+$mail->Password='jaguar@qwepoi123';
+
+$mail->setFrom('anilvirtual2020@gmail.com','Anil Tomar');
+$mail->addAddress('aniltomar3@gmail.com');
+$mail->addReplyTo('anilvirtual2020@gmail.com');
+
+$mail->isHTML(true);
+$mail->Subject= 'Demo Testing';
+$mail->Body='<h1> Hello World, test email, just ignore.</h1>';
+
+if(!$mail->send())
+{
+	echo "Message not sent";
+}else{
+	echo "successfull";
+}
+
+
+?>

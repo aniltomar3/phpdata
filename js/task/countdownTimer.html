@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+	<title>JS String Practise</title>
+	
+</head>	
+<body>
+<h1>Home Page</h1>
+<div>
+We are coming soon 10 April 2025...
+</div>	
+<div style="display:flex; flex-direction:row;">
+	<div>
+	  <input  type="text" style="width:60%; display:block;" />
+	  <label>Days</label>
+	</div>
+
+	<div>
+	  <input type="text" style="width:60%; display:block;" />
+	  <label>Hours</label>
+	</div>
+
+	<div>
+	  <input type="text" style="width:60%; display:block;"/>
+	  <label>Minutes</label>
+	</div>
+
+	<div>
+	  <input type="text" style="width:60%; display:block;" />
+	  <label>Seconds</label>
+	</div>
+</div>	
+
+
+<script>
+
+var endDate="10 April 2025 11:00:00 AM";
+
+document.getElementById('')
+
+ const input= document.querySelectorAll("input");
+function clock(){
+  const now= new Date();       // Jan 1 1970-     2dec 2023  -  (432423432432432)
+  const end= new Date(endDate);// Jan 1 1970-     10dec 2023  -  (989898989898) 
+  //console.log(now);
+  //console.log(end);
+
+  const diff= (end-now)/1000;  // diff in seconds
+  if(diff<0){ return; }
+  let days= Math.floor(diff/3600/24);
+  input[0].value= days;
+  //console.log(days);  434343  hr,min,sec
+  let hours= (Math.floor(diff/3600) %24);
+  input[1].value= hours;
+
+  let min=  (Math.floor(diff/60) %60);
+  input[2].value= min;
+
+  let sec= Math.floor(diff%60) ;
+  input[3].value= sec;
+
+
+}
+
+setInterval(()=>{ clock(); },1000);
+
+
+// 1day-   24hr
+// 1 hour- 60min
+// 1min- 60 sec
+ </script>
+</body>
+</html>	

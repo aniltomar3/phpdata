@@ -1,0 +1,119 @@
+<html>
+<head>
+	<title>Home Page </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+ 
+   // function foo(num1,num2)
+   //  {
+   //    setTimeout(()=>{
+   //      console.log(num1*num2);
+   //    },2000)
+      
+   //  }
+  
+
+
+  function wrapAsync(foo){
+    return function(num1,num2){
+       Promise.resolve(foo(num1,num2)).catch((err)=>{ console.log('some error occured'); })
+      //foo(num1,num2);
+    }
+  }
+
+  var x= wrapAsync( function foo(num1,num2)
+    {
+      setTimeout(()=>{
+        console.log(num1*num2);
+      },2000)
+      
+    });
+
+  //x(2,3);
+
+
+function myFunction()
+{
+  var search= document.getElementById('search').value;
+  console.log(search);
+  if(search!="")
+  {
+     $.ajax({
+       type:"POST",
+       url:"http://localhost/php/demo.php",
+       data:{'name':search},
+       success:function(res){
+        console.log(res);
+       }
+     })
+  }
+  return false;
+}
+
+ 
+   </script> 
+
+
+	<style>  
+    /* *{
+       padding: 0;
+       margin: 0;
+       text-decoration: none;
+       list-style: none;
+       box-sizing: border-box;
+    }
+
+.image{ position:relative; width:200px;float:left; margin:20px 10px; }
+.image_img{ display: block; width:100% }
+.image_overlay{ position: absolute; top:0; left:0; width: 100%; height:100%; background: rgba(0,0,0,0.6); color:#fff;display:flex; flex-direction: column;align-items: center;justify-content: center; opacity:0 }
+.image_overlay:hover{ opacity:1; cursor: pointer; }
+.img_title{ font-size:28px; font-weight: bold; }
+.image-desc{font-size: 20px; margin-top: 10px}
+
+
+section{ width:100%; background-color: cyan; display: flex; flex-direction: row;
+  justify-content: space-around; align-items: flex-start;}
+section div{  flex-basis: 30%; border:1px solid black; padding:20px; }
+.flexone{ background-color: red; }
+.flextwo{background-color: green;}
+.flexthree{background-color: orange;}  */
+</style>
+
+<body>
+
+<!-- <div class="image">
+  <img class="image_img" src="images/anil-new.jpg" />
+  <div class="image_overlay">
+     <h3 class="img_title">Bricks</h3>
+     <p class="image-desc"> lorem ipsum text</p>
+  </div>  
+</div>
+<div class="image">
+  <img class="image_img" src="images/anil-new.jpg" />
+  <div class="image_overlay">
+     <h3 class="img_title">Bricks</h3>
+     <p class="image-desc"> lorem ipsum text</p>
+  </div>  
+</div> -->
+
+
+<!-- <section>
+<div class="flexone">
+lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+</div> 
+<div class="flextwo">
+lorem ipsum lorem ipsumlorem ipsumlorem 
+</div> 
+<div class="flexthree">
+lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+</div>  
+
+</section>   -->
+
+<form action="" method="post" onsubmit="return myFunction()">
+<input type="text" id="search" name="search" value=""/>
+<input type="submit" name="submit" value="SUBMIT"/>
+</form> 
+
+</body>
+</html>

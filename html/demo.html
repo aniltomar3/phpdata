@@ -1,0 +1,98 @@
+<html>
+<head>
+  <title>Demo Practise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+    body{padding:0;margin:0; box-sizing: border-box; background-color:#d9d9d9; font-family: sans-serif;  color: #d9d9d9;}
+    .main-content{width:100%;text-align: center;margin:130px auto; }
+    .main-content .text{font-size:30px; color:#111;}
+
+    footer{ background-color:#111; position:fixed;width:100%;bottom:0; }
+    .footer-content{ display:flex; }
+    .footer-content .box{flex-basis:33%; padding:20px;}
+    .box h2{ font-size:24px; font-weight:bold; color:#d9d9d9; text-transform:uppercase; }
+    .box .content{ position:relative; margin-left:10px; }
+    .left .content p{ font-size:15px;color:#d9d9d9;}
+    .center .content {font-size:16px;  color: #d9d9d9; }
+    .center .content .place,.phone,.email{ margin-bottom:15px; }
+    .right form input,.right form textarea{
+      width:100%;
+      padding:6px;
+      font-size:16px;
+      border:1px solid #ccc;
+      background:#151515;
+
+    }
+    .right form .btn button{
+      padding:10px 30px;
+      background: orange;
+      font-size: 16px;
+      font-weight: bold;
+      color: #d9d9d9;
+      cursor: pointer;
+      border-radius:5px;
+      margin-top:30px;
+    }
+    .right form .btn button:hover{
+  background: #d9d9d9;
+}
+  </style>  
+</head>
+<body>
+<div class="main-container">
+  <div class="main-content">
+  <div class="text"> Responsive Footer </div>
+  </div>  
+  <footer>
+   <div class="footer-content">
+     <div class="left box">
+        <h2>ABout US</h2>
+        <div class="content">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+           <div class="social">
+             <a href=""><span class="fab fa-twitter"></span></a> 
+             <a href=""><span class="fab fa-instagram"></span></a> 
+             <a href=""><span class="fab fa-youtube"></span></a> 
+           </div>
+
+        </div>  
+     </div>
+     
+     <div class="center box">
+      <h2>Address</h2>
+      <div class="content">
+        <div class="place">
+           <span class="fas fa-map-marker-alt"></span>
+           <span class="text">Delhi,India</span>
+        </div>
+        <div class="phone">
+          <span class="fas fa-phone-alt"></span>
+           <span class="text">91- 9898989898</span>
+        </div>
+
+        <div class="email">
+          <span class="fas fa-envelope"></span>
+           <span class="text">demo@gmail.com</span>
+        </div>  
+
+      </div>  
+     </div>
+
+     <div class="right box">
+      <h2>Contact Us</h2>
+       <div class="content">
+          <form action="#">
+            <div class="email"> <div class="text">Email*</div><input type="text" name="yourname" />  </div>
+            <div class="msg"><div class="text">Message*</div> <textarea></textarea></div>
+            <div class="btn"><button type="submit">SEND</button></div>
+          </form>  
+       </div> 
+     </div> 
+   </div>
+
+  </footer>  
+</div>
+</body>  
+
+</html>

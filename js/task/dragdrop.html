@@ -1,0 +1,54 @@
+<!Doctype html>
+<html>
+<head>
+<title>Demo page</title>
+<style>
+*{margin:0; padding:0; font-family:sans-serif; box-sizing: border-box;}
+.container{ width:100%; min-height:100vh;background:#0b0423; display:flex; align-items:center; }
+#left,#right{width:300px; min-height:400px; margin:20px; border:2px dashed red;}
+.list{ background:#91eb63; height:60px; margin:30px; color:#fff; display:flex;align-items:center;cursor:grab; }
+.list p{ color:black; margin-left:20px;}
+</style>    
+</head>    
+<body>
+<div class="container">
+<div id="left">
+    <div class="list" draggable="true"><p> List Item1</p> </div>
+    <div class="list" draggable="true"><p> List Item2</p> </div>
+    <div class="list" draggable="true"><p> List Item3</p> </div>
+    <div class="list" draggable="true"><p> List Item4</p> </div>
+</div>
+<div id="right"></div>
+</div>
+
+<script>
+let lists= document.getElementsByClassName("list");
+let leftBox= document.getElementById("left");
+let rightBox= document.getElementById("right");
+
+for(i of lists){
+    i.addEventListener("dragstart",function(e){
+        let selected= e.target;
+
+        rightBox.addEventListener("dragover",function(e){
+             e.preventDefault(); // prevent default to allow drop
+        });
+
+        rightBox.addEventListener("drop",function(e){
+             rightBox.appendChild(selected);
+             selected= null;
+        });
+
+        leftBox.addEventListener("dragover",function(e){
+             e.preventDefault(); // prevent default to allow drop
+        });
+
+        leftBox.addEventListener("drop",function(e){
+             leftBox.appendChild(selected);
+             selected= null;
+        });
+    })
+}
+</script>    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!Doctype html>
+<html>
+<head>
+<title>TODO</title>
+<style>
+*{ padding:0; margin:0; box-sizing:border-box; font-family:'sans-serif;' }
+body{ display:flex; justify-content:center; align-items:center; min-height:100vh; background: #2f363e;}
+.box{ width:500px; height:600px; background:#2f363e; padding: 10px 50px; position:relative; box-shadow:25px 25px 75px rgba(0,0,0,0.25), 10px 10px 70px rgba(0,0,0,0.25), inset 5px 5px 10px rgba(0,0,0,0.25) }
+h2{ width:100%; font-weight:600; text-align:center; color:#fff; font-size:20px; }
+#inputBx{width:100%; border:none; outline: none; padding:15px 20px; border-radius:30px; font-size: 16px;}
+#list li{ position:relative; display:flex;justify-content:center; align-items:center; background:#1f83f2;margin: 15px 0;padding: 10px; border-radius: 15px;
+    cursor: pointer; min-height:42px; }
+
+ .box li i{ position:absolute; right:20px; border-radius:50%; width:30px; height:30px; background:#ff2c74; display:flex; justify-content:center; align-items:center; }   
+ .box li i:before{ content:''; position:absolute; width:15px; height:2px; background:#fff; transform: rotate(45deg);}  
+ .box li i:after{ content:''; position:absolute; width:15px; height:2px; background:#fff; transform: rotate(-45deg); }  
+</style>	
+</head>
+<body>
+
+<div class="container">
+    <div class="box">
+     <h2>Todo List</h2>
+     <input type="text" value="" placeholder="write todo text here..." id="inputBx" />
+     <ul id="list">
+       <!-- <li>My first task <i></i> </li>
+       <li>My Second task <i></i></li> -->
+     </ul>	
+    </div>
+</div>
+
+<script>
+  let inptBx= document.querySelector('#inputBx');
+  let list= document.querySelector('#list');
+
+  inptBx.addEventListener("keyup",function(event){ 
+      if(event.key=="Enter"){
+      	// alert(event);
+
+      	addItem(this.value);  // declaration
+      	this.value="";
+      }
+  })
+
+
+  function addItem(val){   // definition
+  	   //console.log(val);
+  	  let listItem= document.createElement('li');   // <li> </li>
+  	  listItem.innerHTML= val +'<i></i>';   // 
+  	  list.appendChild(listItem);
+  }
+
+</script>	
+</body>
+</html>

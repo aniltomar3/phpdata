@@ -1,0 +1,98 @@
+<html> 
+<head>
+  <title>Demo Practise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+    *{ padding:0; margin:0; box-sizing: border-box; list-style: none;}
+    body{font-family: sans-serif;}
+    .header{ background-color:#ded5dd;width:100%; height:100px; }
+    .logo{float:left; width:30%; text-align: center; line-height:100px;}
+    .logo h1{ font-size:30px; }
+    .main-menu{ float: right; width:70%;line-height:90px; }
+    .main-menu ul{ list-style:none; text-align:right; }
+    .main-menu ul li{display: inline-block;padding:10px 20px; cursor:pointer; }
+    .main-container{min-height:600px; background-color: red; }
+    .content{text-align:center; padding:200px 0; line-height:50px;}
+    .content h2{ font-size:24px; font-weight:bold; }
+    .content p{ font-size:18px;}
+
+     footer{ background:#111; width:100%;height:300px; }
+     .left{ width:33%;  float: left; }
+     .center{width:33%; float: left;}
+     .right{width:33%;  float: left;}
+     .box{padding:20px 20px;}
+     .box h2{ font-size:30px; font-weight:600;text-transform:uppercase; color:#d9d9d9;line-height:50px;}
+     .box p{ color:#d9d9d9; }
+     .center p,.center p a{ color:#d9d9d9; text-decoration: none; line-height:30px; }
+     .right form .text{ color:#656565; font-size:20px; }
+     .right form input,.right form textarea{ width:100%;padding:6px;font-size:16px;border:1px solid #ccc; background:#151515;}
+     .email,.msg{ margin-bottom:20px; }
+     .right form .send  {
+    height: 40px;
+    width: 60px;
+    background: orange;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 1.3s;
+}
+.right form .send:hover  {background: #fff;}
+.copyright{ width:100%;line-height:50px; text-align: center; background:#ccc;}
+  </style>  
+</head>
+<body>
+<header>
+  <div class="header">
+     <div class="logo"><h1>Anil Tomar</h1></div>
+    <div class="main-menu">
+        <ul>
+           <li>Home</li>
+           <li>About US</li>
+           <li>Contact Us</li>
+        </ul>  
+    </div>  
+  </div>  
+</header>
+
+<div class="main-container">
+    <section>
+      <div class="content">
+        <h2> Demo Content Here</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+      </div>
+    </section>  
+</div>
+<footer>
+  <div class="footer">
+      <div class="left box">
+         <h2>ABOUT US</h2>
+         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      </div> 
+      <div class="center box">
+         <h2>Address</h2>
+         <p>Delhi , India</p>
+         <p>91- 123456789</p>
+         <p><a href="mailto:lpw@example.com">lpw@example.com</a></p>
+      </div> 
+      <div class="right box">
+         <h2>Contact Us</h2>
+         <form>
+          <div class="email">
+             <div class="text">Email*</div>
+             <input type="email" name="email" />
+          </div> 
+          <div class="msg">
+            <div class="text">Message*</div>
+            <textarea name="message"></textarea>
+          </div> 
+          <div class="btn"><input type="submit" name="submit" value="SEND" class="send" /></div>
+         </form> 
+      </div>  
+  </div>  
+</footer>  
+<div class="copyright">This demo content is copyright year 2023-2024</div>
+</body>  
+
+</html>

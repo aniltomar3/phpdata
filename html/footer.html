@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Footer Css</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+     @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+     *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        color: #d9d9d9;
+     }
+     .content1{
+     
+        position: relative;
+        margin: 130px auto;
+        text-align: center;
+        padding: 0 20px;
+     }
+     .content1 .text{
+       font-size:30px;
+       font-weight: 600;
+       color: #202020;
+     }
+
+     footer{
+      position: fixed;
+      width: 100%;
+      background:#111;
+      bottom: 0;
+     }
+     .main-content{
+      display: flex;
+     }
+     .main-content .box{
+      flex-basis: 33%;
+      padding: 20px 20px;
+     }
+     .box h2{
+       font-size: 30px;
+       font-weight: 600;
+       text-transform: uppercase;
+     }
+     .box .content{
+/*      position: relative;*/
+      margin-left: 20px;
+     }
+     .left.content p{ text-align: justify; }
+     .left .content .social a { padding:0 2px }
+     .left .content .social a span{
+       height: 40px;
+       width: 40px;
+       background: #1a1a1a;
+       line-height: 40px;
+       text-align: center;  
+       border-radius:5px;
+       transition: 1.3s;
+     }
+     .left .content .social a span:hover{
+  background: orange;
+}
+
+.center .content .fas{
+   background: #1a1a1a;
+   width: 40px;
+   height: 40px;
+   border-radius:50%;
+   line-height: 40px;
+   text-align: center;
+   margin-bottom: 20px;
+   margin-right:10px;
+   transition: 1.3s;
+}
+.center .content .fas:hover{
+  background: orange; cursor: pointer;
+}
+.right form .text{
+  margin-bottom: 2px;
+  font-size: 20px;
+  color: #656565;
+}
+.right form .msg{ margin-top:10px }
+
+.right form input,.right form textarea{  
+  width: 100%;
+  padding: 6px;
+  font-size: 16px;
+  border:  1px solid #ccc;
+  background: #151515;
+}
+
+.right form .btn button{
+  height: 40px;
+  width: 60px;
+  background: orange;
+  font-size: 16px;
+  font-weight: 600;
+ cursor: pointer;
+ border-radius: 5px;
+ transition: 1.3s;
+}
+.right form .btn button:hover{
+  background: #000;
+}
+  </style>  
+
+
+</head>
+<body>
+<div class="content1">
+ <div class="text">Responsive Footer</div>
+</div> 
+
+ <footer>
+  <div class="main-content">
+    <div class="left box">
+      <h2>About Us</h2>
+      <div class="content">
+       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="social">
+              <a href="#"><span class="fab fa-facebook-f"></span></a>
+              <a href="#"><span class="fab fa-twitter"></span></a>
+              <a href="#"><span class="fab fa-instagram"></span></a>
+              <a href="#"><span class="fab fa-youtube"></span></a>
+            </div>
+      </div>
+    </div>
+    <div class="center box">
+      <h2>Address</h2>
+        <div class="content">
+          <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="text">Delhi , India</span>
+            </div>
+            <div class="phone">
+              <span class="fas fa-phone-alt"></span>
+              <span class="text">91- 123456789</span>
+            </div>
+            <div class="email">
+              <span class="fas fa-envelope"></span>
+              <span class="text">lpw@example.com</span>
+            </div>
+        </div>  
+    </div>
+    <div class="right box">
+      <h2>Contact Us</h2>
+      <div class="content">
+         <form action="#">
+              <div class="email">
+                <div class="text">Email *</div>
+                <input type="email" required>
+              </div>
+              <div class="msg">
+                <div class="text">Message *</div>
+                <textarea></textarea>
+              </div>
+              <div class="btn">
+                <button type="submit">Send</button>
+              </div>
+            </form>
+
+      </div>
+    </div>
+   
+ </div>
+ </footer>
+
+ 
+</body>
+</html>

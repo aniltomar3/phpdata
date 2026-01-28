@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>Order Page</title>	
+<style>
+*{padding:0; margin:0; box-sizing:border-box; font-family: sans-serif;}
+body{min-height: 100vh; background-image: url(images/profile/html_table.jpg); background-position: center; background-size: cover;}
+td img{width:36px;height:36px;border-radius:50%; vertical-align: middle; margin-right:10px;}
+table th,td{ padding:20px; }
+main.table{width:80%; height:500px; background-color: rgba(255,255,255,0.6); border-radius:10px; margin:10px auto;}
+.mytable{ background-color:#fffb;width:90%; border-radius:5px; margin:10px auto}
+section {
+    text-align: center;
+    padding: 15px 0;
+}
+thead th{text-transform: capitalize; background-color:#d5d1de; text-align: left}
+table,th,td{ padding:20px; border-collapse:collapse; }
+.status.delivered {
+    background-color: #86e49d;
+    color: #006b21;
+}
+.status.cancelled {
+    background-color: #d893a3;
+    color: #b30021;
+}
+.status.shipped {
+    background-color: #6fcaea;
+}
+.status {
+    padding: 0.4rem 0;
+    border-radius: 2rem;
+    text-align: center;
+}
+tbody tr:nth-child(even){ background-color:#0000000b; }
+table.mytable{overflow: hidden;}
+</style>	
+</head>	
+<body>
+	<main class="table">
+	<section><h1>Customer Order</h1></section>
+ <table class="mytable">
+  <thead>
+         <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Location</th>
+            <th>Order Date</th>
+            <th>Status</th>
+            <th>Amount</th>
+         </tr>	
+  </thead>
+  <tbody>
+  	<tr>
+  		<td>1</td>
+  		<td><img src="images/profile/zinzu.jpg" alt="img1"/>Zinzu Chan Lee</td>
+  		<td>Seoul</td>
+  		<td>17 Dec, 2022</td>
+  		<td><p class="status delivered">Delivered</p></td>
+  		<td>$128.90</td>
+    </tr> 
+    <tr>
+  		<td>2</td>
+  		<td><img src="images/profile/alson.jpg" alt="img2"/>Alson</td>
+  		<td>Kathmandu</td>
+  		<td>27 Aug, 2023</td>
+  		<td><p class="status Cancelled">Cancelled</p></td>
+  		<td>$5350.50</td>
+    </tr>
+      	<tr>
+  		<td>3</td>
+  		<td><img src="images/profile/sonal.jpg" alt="img3"/>Sonal Gharti</td>
+  		<td>Tokyo</td>
+  		<td>14 Mar, 2023</td>
+  		<td><p class="status shipped">Shipped</p></td>
+  		<td>$210.10</td>
+    </tr> 
+    <tr>
+  		<td>4</td>
+  		<td><img src="images/profile/alex.jpg" alt="img4"/>Alex Gonley</td>
+  		<td>London</td>
+  		<td>23 Apr, 2023</td>
+  		<td><p class="status Cancelled">Cancelled</p></td>
+  		<td>$399</td>
+    </tr>
+
+
+    </tbody>
+</table>
+</main>
+</body>	
+</html>

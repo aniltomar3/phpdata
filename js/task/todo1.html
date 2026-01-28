@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>Todo1</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		*{ padding:0; margin:0; box-sizing:border-box; font-family:sans-serif; }
+		.container {display: flex;align-items: center;justify-content: center;height: 300px;}
+		#username{width:500px; padding:10px 20px; outline:none; border-radius:3px;}
+		input#usersub {padding: 10px 8px; margin-left: -6px; cursor: pointer;background: none;border-radius: 3px;border: 2px solid black; }
+        .display { width: 500px;margin: -80px auto; }
+        table { width: 100%; }
+        td {
+    text-align: center;
+}
+	</style>	
+</head>
+<body>
+<div class="full">
+<div class="container">
+  <div class="box">
+  	 <input type="text" name="username" value="" id="username" />
+  	 <input type="submit" name="sub" value="SUBMIT" id="usersub" />
+  </div>
+</div>  
+  <div class="display">
+	  <table>
+	   <thead>
+	     <tr>
+	      <th>#</th>
+	      <th>Your Name</th>
+	      <th>Actions</th>
+	     </tr>	
+	   </thead>
+
+	   <tbody>
+	     <tr>
+	       <td>1</td>
+           <td>King of JS</td>
+	       <td><i class="fa fa-edit"></i> <i class="fa fa-trash-o" style="font-size:18px"></i></td>
+	     </tr>
+	   </tbody>
+
+	  </table>	
+   </div>
+
+</div>
+
+<script>
+const name= document.getElementById('username');
+
+
+
+</script>	
+</body>
+</html>

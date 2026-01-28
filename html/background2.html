@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Background Page</title>	
+<style>
+*{
+	padding:0; margin:0;font-family: sans-serif;
+}
+.container{width:100%;height:700px;background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("images/desert-images/background.png");background-position: center;background-size:cover;padding:2% 5%;box-sizing: border-box;}
+.navbar{height:15%;display:flex;align-items: center;}
+nav{flex:1; text-align: right;}
+nav ul li{list-style: none; display: inline-block; margin-left:60px;}
+nav ul li a{ text-decoration:none; color:#fff; font-size:13px; }
+.logo{width:50px;cursor: pointer;}
+.menu-icon{width:30px;cursor:pointer;margin-left:50px;}
+.row{ display:flex; align-items:center; height:88%;}
+.col{flex-basis:50%;}
+h1{color:#fff; font-size: 100px;}
+p{color:#fff; font-size: 11px; line-height:15px;}
+button {
+    padding: 6px 30px;
+    font-size: 13px;
+    color: #000;
+    background: #fff;
+    border-radius: 20px;
+    outline: none;
+    border: 0;
+    margin-top: 20px;
+}
+
+.card{
+	width:200px;
+	height:230px;
+	display: inline-block;
+	border-radius: 10px;
+	padding:15px 25px;
+	box-sizing: border-box;
+	cursor: pointer;
+	margin:20px 25px;
+	background-position: center;
+	background-size: cover;
+	border:1px solid red;
+	transition: transform 0.5s;
+}
+.one{background: url(images/desert-images/pic-1.png);}
+.two{background: url(images/desert-images/pic-2.png);}
+.three{background: url(images/desert-images/pic-3.png);}
+.four{background: url(images/desert-images/pic-4.png);}
+.card:hover{transform: translateY(-10px);}
+h5{color:#fff; text-shadow:0 0 5px #999;}
+.card p {font-size:8px; color:#fff;}
+</style>	
+</head>	
+<body>
+<div class="container">
+  <div class="navbar">
+     <img src="images\desert-images\logo.png" alt="img" class="logo" />
+     <nav>
+        <ul>
+           <li><a href="#">HOME</a></li>
+           <li><a href="#">ABOUT US</a></li>
+           <li><a href="#">CONTACT US</a></li>
+        </ul>     
+     </nav> 
+     <img src="images\desert-images\menu.png" alt="img" class="menu-icon" />
+   </div>
+
+
+    <div class="row">
+       <div class="col">
+       	<h1>Sahara</h1>
+       	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+       	<button type="button">Explore</button>
+       </div>
+       <div class="col">
+	       	<div class="card one">
+	       		<h5>East Desert</h5>
+	       		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	        </div>	
+	         <div class="card two">
+	       		<h5>West Desert</h5>
+	       		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	        </div>
+	        <div class="card three">
+	       		<h5>North Desert</h5>
+	       		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	        </div>
+	        <div class="card four">
+	       		<h5>South Desert</h5>
+	       		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	        </div>	 
+       </div>
+    </div>	
+</div>
+</body>
+</html>

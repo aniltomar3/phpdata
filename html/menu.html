@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sidebar Menu</title>
+<style>
+
+	/*
+     transition-property: width,heigth,background; transition-duration:2s,2s,2s; transition-timing-function:linear; transition-delay:4s;
+     or 
+     transition:all 2s linear 4s;
+
+	*/
+*{box-sizing: border-box; }
+html,body{overflow-x:hidden; height:100%; background: #fff; padding:0; margin:0;}
+.header{ background:#ee5253; width:100%; height:60px; position:fixed; z-index:10;}
+.main{margin-top:60px; height:100%; padding:10px 50px;}
+.sidebarMenu{ height:100%; position:fixed; left:0; top:0; width:250px; margin-top:60px; background:#2e86de; 
+	transform: translateX(-250px); transition: transform 700ms ease-in-out;}
+/*animation-name:moving; animation-duration:4s; animation-delay:2s;
+}
+@keyframes moving{ 0%{background:#2e86de; left:0px;top:0px;} 100%{background:#2e86de; left:200px;top:0px;} }*/
+.menu{list-style: none; margin:0; padding:0; }
+.menu li{ color:#fff; border-bottom: 1px solid rgba(255, 255, 255, 0.10)}
+.menu li a{text-decoration: none; color:#fff; padding:20px; display: block;}
+.sidebarToggle{ width:22px; height:22px; position:absolute; z-index:20; top:20px; left:20px; cursor:pointer; }
+#openMenu:checked ~ .sidebarMenu{ transform:translateX(0); }
+.spinner{ height:3px; background:#fff; transition: all 0.3s;}
+.spinner.middle,.spinner.bottom{ margin-top:3px; }
+#openMenu:checked ~ .sidebarToggle > .spinner.middle{ opacity:0; }
+#openMenu:checked ~ .sidebarToggle > .spinner.top{ transform:rotate(135deg); margin-top:8px; }
+#openMenu:checked ~ .sidebarToggle > .spinner.bottom{ transform:rotate(-135deg); margin-top:-8px;  }
+
+.submenu{ height:100%; position:fixed; left:0; top:0; width:250px; background:#96c5f4; transform: translateX(-250px); transition: transform 700ms ease-in-out;}
+.menu1:hover ul.submenu{ transform:translateX(250px); }
+
+/*.menu1:hover ~ .submenu1{ height:100%; position:fixed; left:0; top:0; width:250px; background:#96c5f4; transform: translateX(-500px); transition: transform 700ms ease-in-out;}*/
+.submenu1{ height:100%; position:fixed; left:0; top:0; width:250px; background:#96c5f4; transform: translateX(-500px); transition: transform 700ms ease-in-out;}
+li.menu2:hover ul.submenu1{ transform:translateX(250px); }
+</style>	
+</head>	
+<body>
+<div class="header"></div>
+<input type="checkbox" id="openMenu" />
+<label for="openMenu" class="sidebarToggle">
+	<div class="spinner top"></div>
+   <div class="spinner middle"></div>
+   <div class="spinner bottom"></div>
+</label>
+   
+  <div class="sidebarMenu">
+    <ul class="menu">
+       <li class="menu1"><a href="">Home Page</a>
+         <ul class="submenu">
+         	<li><a href="">Career</a></li>
+         	<li class="menu2"><a href="">Catering</a>
+	            <ul class="submenu1">
+		         	  <li><a href="">Career1</a></li>
+		         	  <li><a href="">Catering1</a></li>
+	             </ul> 
+         	</li>
+         </ul> 	
+       </li>
+       <li><a href="">About Page</a></li>
+       <li><a href="">Blog Page</a></li>
+       <li><a href="">Profile Page</a></li>
+       <li><a href="">Contact Page</a></li>
+    </ul>		
+</div>
+
+<div class="main">
+ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</div>	
+</body>
+</html>

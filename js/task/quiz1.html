@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+ <head>
+ <title>Quiz Competition</title>
+ </head>	
+<body>
+ <div class="quiz-section">
+  <div class="quiz">
+  	<h2 class="question" id="question">Quiz Question</h2>
+  	<br/>
+  	<ul>
+      <li>
+       <input type="radio" name="answer" class="answer" />
+       <label for="a" id="option_1"> Quiz Option </label> 
+      </li>
+
+      <li>
+       <input type="radio" name="answer" class="answer" />
+       <label for="a" id="option_2"> Quiz Option </label> 
+      </li>
+
+      <li>
+       <input type="radio" name="answer" class="answer" />
+       <label for="a" id="option_3"> Quiz Option </label> 
+      </li>
+
+      <li>
+       <input type="radio" name="answer" class="answer" />
+       <label for="a" id="option_4"> Quiz Option </label> 
+      </li>
+
+  	</ul>	
+  	<hr/>
+	  	<div class="btn">
+          <button type="submit" id="submit" > Submit </button>
+	    </div>
+</div>
+
+<script>
+const quizData= [
+{
+	question: "What does html stand for?",
+	options:[
+      "Hyper text markup language",
+      "Hyper transfer markup language",
+      "Hyper machine language",
+      "Hyper link and text markup language"
+	],
+	correct:0,
+},
+{
+	question: "What Css Property is used to control the spacing between 2 block elements?",
+	options:[
+      "margin",
+      "padding",
+      "spacing",
+      "border-spacing"
+	],
+	correct:0,
+},
+{
+	question: "React JS is developed by who?",
+	options:[
+      "Google",
+      "Facebook",
+      "Yahoo",
+      "No one"
+	],
+	correct:1,
+}
+
+];
+ 
+const quiz=         document.querySelector(".quiz");
+const questionElem= document.querySelector(".question");
+const answerElem=   document.querySelectorAll(".answer");
+const option_1= document.querySelector("#option_1");
+const option_2= document.querySelector("#option_2");
+const option_3= document.querySelector("#option_3");
+const option_4= document.querySelector("#option_4");
+
+const submitBtn= document.querySelector('#submit');
+
+let currentQuiz= 0;
+let score= 0;
+
+// Load Quiz function
+
+const loadQuiz= ()=>{
+	const {question, options}= quizData[currentQuiz];
+	console.log(options);
+
+	questionElem.innerText= question;
+	options.forEach( (curOption,index)=> { var x= index+1;  return  document.querySelector("#option_"+x).innerHTML= curOption;  });
+   //return window[`option_${index + 1}`].innerText= curOption  });
+
+};
+
+loadQuiz();
+
+// Get selected answer function on button click
+ const getSelectedOption= ()=>{
+ 	let ans_index;
+ 	// answerElem.forEach( (curOption,index)=>{
+    // if(curOption.checked){
+    // 	ans_index= index;
+    // }
+ 	// }); return ans_index;
+ 	let answerElement= Array.from(answerElem);
+ 	return answerElement.findIndex( (curOption,index)=> curOption.checked);
+ }
+
+const deselectAnswer =()=>{
+  return answerElem.forEach( (curOption,index)=>{ curOption.checked=false; })
+}
+  submitBtn.addEventListener("click",()=>{
+    const selectedOptionIndex= getSelectedOption();
+    //console.log(selectedOptionIndex);
+    if(selectedOptionIndex === quizData[currentQuiz].correct){
+      score= score+1; 
+     // console.log(score);
+    }
+    currentQuiz++;
+    
+    if(currentQuiz < quizData.length){
+      deselectAnswer();
+      loadQuiz();
+    }else{
+      quiz.innerHTML= `<div> <h2> Your score: ${score}/ ${quizData.length}</h2> <br/>
+      <button onclick="location.reload()"> Play Again </button>
+      </div>`;
+    }
+
+  });
+
+
+</script>	
+</body>
+</html>
