@@ -13,6 +13,8 @@ $obj= new first();
 echo "<br/>";
 $obj= new second();
 
+
+// PHP automatically calls __get(), __set(), __isset(), and __unset() when you try to read, write, check, or remove an inaccessible property
 class Abc{
     private $name;
 	private $arr= array('fname'=>'sam','salary'=>'100000');
