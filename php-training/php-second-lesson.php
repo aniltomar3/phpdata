@@ -75,6 +75,8 @@ echo strlen('hello');   //5
 5) str_replace('world','dolly','hello world');
 6)strstr($string,$search1);     //first occurence of word return world till last 
                                   return false if not found
+  $x= 'demo@gmail.com';
+  $res= strstr($x,'@',false);  echo $res;  // @gmail.com                               
 7)str_split($str,3);    //hello PHP  0=>hel 1=>lo   2=>PHP
 8)str_repeat('.',10);  // ..........
 9)strtolower(),strtoupper() //
@@ -127,6 +129,7 @@ $res= array_diff($arr1,$arr2,$arr3);  //paper
 
 array_diff_key- compare the keys
 array_diff_assoc- compare both key and values
+array_intersect() returns values present in all arguments.
 
 5) array_keys- return new array with array keys as value
 $arr1= array('one'=>'pen','two'=>'pencil','three'=>'paper');
@@ -148,9 +151,16 @@ function testing($val){ return($val>1)}  //2,3,4,5
 
 10) sort,rsort,asort,arsort,ksort,krsort   // r means reverse
 $arr= array('img12.png','img10.png','img2.png','img3.png');
-natsort($arr);   print_r($arr);
+natsort($arr);   print_r($arr);  // arrange in ASC order
 
 11) array_map('callable_func',arr1,arr2);
+$first_names = ["John", "Jane", "Bob"];
+$last_names  = ["Doe", "Smith", "Jones"];
+
+$full_names = array_map(function($first, $last) {
+    return "$first $last";
+}, $first_names, $last_names);
+// $full_names is now: ["John Doe", "Jane Smith", "Bob Jones"]
 
 $employeeNames = ['john', 'mark', 'lisa'];
 $employeeEmails = ['john@example.com', 'mark@example.com', 'lisa@example.com'];
@@ -177,3 +187,55 @@ Array
         )
 
 )
+
+12. array_walk(&$arr,'callback',$arg); //modify the original array directly in-place
+
+$arr= ['Laptop','Mouse','Keyboard'];
+$prefix='Electronics';
+array_walk($arr,'applyCategory',$prefix);
+function applyCategory(&$value,$key,$prefix){
+    return $value = $prefix.'-'.$value;
+}
+echo "<pre>"; print_r($arr);
+    Array
+(
+    [0] => electronics-Laptop
+    [1] => electronics-Mouse
+    [2] => electronics-Keyboard
+)
+
+
+13. array_column($arr,'key_name')  // use in multidimensional array
+$arr= [
+ ['id'=>11,'name'=>'demo1','email'=>'demo1@gmail.com'],
+ ['id'=>12,'name'=>'demo2','email'=>'demo2@gmail.com'],
+ ['id'=>13,'name'=>'demo3','email'=>'demo3@gmail.com'],
+];
+$res= array_column($arr,'name','id');  // 'id' -specify key name otherwise 0,1,2
+echo "<pre>"; print_r($res);
+Array
+(
+    [11] => demo1
+    [12] => demo2
+    [13] => demo3
+)
+
+14. array_chunk($arr,2,true)  // if you want to preserve array keys in associative array
+
+$arr= array('one','two','three','four','five','six'); // 
+$res= array_chunk($arr,2);
+echo "<pre>"; print_r($res); // Multidimensional array
+array_filter($res,'show');
+function show($v){
+    foreach($v as $key=>$val){
+    echo '<div style="border:1px solid #ccc">';
+    echo $val;
+    echo '</div>';
+  }
+}
+
+15. array_reduce($arr,'callback_func',$initial)
+
+$numbers=[1,2,3,4,5];
+$res= array_reduce($numbers,function($carry,$item){ return $carry= $carry + $item; },0);
+echo "<pre>"; print_r($res);   // 15  $carry= 0 here then after 0+1= 1
