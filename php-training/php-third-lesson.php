@@ -65,38 +65,6 @@ session_destroy();
 
 
 
-login
-session start[email], pass[];
 
 
 
-dashboard
-check user email,pass exist
-redirect yo login
-
-true
-information
-
-
-
-
-Managing director and ceo
-ritesh.kumar@hdfcergo.com
-
-
-
-Chairman
-keki.mistry@gmail.com
-keki.mistry@icloud.com
-keki.mistry@hdfc.com
-
-
-customer grievance(gzb)- bhim.giri1@hdfcergo.com
-
-
-Anuj Tyagi (JOint managing director)
-anuj.tyagi@hdfcergo.com
-
-
-Renu S karnad (non-executive director)
-rskarnad@hdfc.com
