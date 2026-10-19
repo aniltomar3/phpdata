@@ -188,7 +188,7 @@ Array
 
 )
 
-12. array_walk(&$arr,'callback',$arg); //modify the original array directly in-place
+12. array_walk($arr,'callback',$arg); //modify the original array directly in-place
 
 $arr= ['Laptop','Mouse','Keyboard'];
 $prefix='Electronics';
