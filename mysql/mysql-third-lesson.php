@@ -4,7 +4,8 @@ Normalisation-
 1st Normal Form
 Rule-  
 * Table should not contain any multivalued attribute.
-* Data type of attribute should not change.
+* Data type of attribute should not change. 
+Eg- Wrong if a column meant for "Age" contains a number (25) in row one, a word ("Thirty") in row two, and a date (15-08-1999) in row three
 
 
 Rollno     Name     Course        
@@ -15,7 +16,7 @@ Rollno     Name     Course
 
   1NF
 1st way  
-  Primary Key= Rollno + Course
+  Primary Key= Composite (Rollno + Course)
 Rollno    Name       Course
   1       Sam          C
   1       Sam          C++
@@ -29,20 +30,30 @@ Rollno   Name    Course1   Course2
   2      Harsh     Java      Null
   3      David     C         DBMS
 
- 3rd way
-  
-  Rollno    Name               Rollno        Course
-    1       Sam                 1             C
-    2       Harsh               1             C++
-    3       David               2             Java
-                                3              C
-                                3             DBMS  
 
 
 2nd Normal Form
 * A table is in 2nd Normal Form if it's in 1NF.
 * 1NF + every non-key attribute depend on the entire primary key of the relation.
 * No partial dependency in table. Eg- AB  AB->C  not A->C
+
+1st way example above in 2ndNF
+In 1nf non-key attribute is "Name" it's not depend on primary key (Rollno + Course) only depends on Rollno. 
+If I know Rollno I know name.  Partial Dependency (Rollno -> Name), which violates 2NF
+
+Rollno(PK)        Name
+  1               Sam
+  2               Harsh
+  3               David
+
+
+Here PK= (Rollno + Course) //  table has no non-key attributes, it is physically impossible to have a partial dependency.
+Rollno (FK)      Course
+  1                C
+  1               C++
+  2              Java
+  3               C
+  3              DBMS
 
  
 
